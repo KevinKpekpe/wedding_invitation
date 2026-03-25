@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════
-   MARIAGE COUTUMIER — RENATO & RANIA
+   MARIAGE COUTUMIER — RENATO & HAMIDA IBRAHIM
    main.js — Interactions & Animations
 ══════════════════════════════════════════════ */
 
