@@ -559,13 +559,22 @@ body {
 .tbl-lbl { font-family: var(--ff-sans); font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: #1a0f04; font-weight: 700; }
 .tbl-num { font-family: var(--ff-script); font-size: 32px; color: #1a0f04; line-height: 1; }
 
-/* Calendrier */
-.cal-block { width: 100%; max-width: 360px; z-index: 1; border: 1px solid rgba(201,149,46,.35); border-radius: 8px; overflow: hidden; }
-.cal-head { background: var(--grd-gold); padding: 8px 0; text-align: center; }
+/* Calendrier totalement transparent pour voir le pagne */
+.cal-block {
+  width: 100%; max-width: 360px; z-index: 1;
+  border: 1px solid rgba(201,149,46,.3); border-radius: 8px;
+  overflow: hidden;
+  background: transparent; /* Totalement transparent */
+}
+.cal-head {
+  background: rgba(201,149,46,0.15); /* Juste un léger voile doré */
+  padding: 8px 0; text-align: center;
+  border-bottom: 1px solid rgba(201,149,46,.2);
+}
 .cal-head span { font-family: var(--ff-serif); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #1a0f04; font-weight: 600; }
-.cal-names { display: grid; grid-template-columns: repeat(4,1fr); background: var(--cream-d); border-bottom: 1px solid rgba(201,149,46,.2); }
+.cal-names { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(240,227,192,0.15); border-bottom: 1px solid rgba(201,149,46,.1); }
 .cal-names span { text-align: center; padding: 5px 0; font-family: var(--ff-sans); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dk); font-weight: 700; }
-.cal-days { display: grid; grid-template-columns: repeat(4,1fr); background: var(--cream); padding: 5px 0; }
+.cal-days { display: grid; grid-template-columns: repeat(4,1fr); background: transparent; padding: 5px 0; }
 .cal-day { text-align: center; padding: 10px 4px 5px; font-family: var(--ff-serif); font-size: 22px; color: var(--text-dk); font-weight: 300; position: relative; }
 .cal-day.hl { color: var(--gold-dk); font-weight: 600; }
 .cal-day.hl::before { content: ''; position: absolute; inset: 2px auto; left: 50%; transform: translateX(-50%); width: 46px; height: calc(100% - 4px); border-radius: 6px; background: rgba(201,149,46,.12); border: 1px solid rgba(201,149,46,.35); z-index: 0; }
