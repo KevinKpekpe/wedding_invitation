@@ -274,7 +274,7 @@ body {
   background-attachment: fixed;
   transform-origin: center;
   transition: transform .1s linear;
-  filter: sepia(0.3) saturate(1.1) brightness(0.85); /* Effet doré léger */
+  filter: sepia(0.6) saturate(1.4) contrast(1.1) brightness(0.8); /* Effet doré plus prononcé */
 }
 /* Ken Burns slow zoom */
 .hero-bg.active { animation: kbzoom 20s ease-in-out infinite alternate; }
@@ -284,8 +284,8 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(10,3,0,.35) 0%,
-    rgba(10,3,0,.15)  30%,
-    rgba(139,96,16,.2) 65%, /* Teinte dorée au milieu */
+    rgba(139,96,16,.3)  30%, /* Plus de doré en haut/milieu */
+    rgba(139,96,16,.25) 65%, 
     rgba(10,3,0,.95) 100%
   );
 }
