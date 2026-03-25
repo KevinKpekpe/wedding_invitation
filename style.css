@@ -503,6 +503,11 @@ body {
 .card-pagne-tl img, .card-pagne-br img {
   width: 100%; height: 100%; object-fit: cover;
   border-radius: 4px; opacity: .82;
+  /* Effet de découpe festonnée pour simuler un morceau de tissu */
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 30%, 92% 50%, 100% 70%, 100% 100%, 0% 100%, 0% 70%, 8% 50%, 0% 30%
+  );
+  border: 1px solid rgba(201,149,46,0.3);
 }
 .card-pagne-tl {
   top: -6px; left: -6px; transform: rotate(-16deg);
@@ -621,7 +626,11 @@ body {
   border-top: 1px solid rgba(201,149,46,.2);
 }
 .footer-pagne-row { display: flex; gap: 16px; }
-.footer-pagne-row img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; opacity: .75; }
+.footer-pagne-row img { 
+  width: 60px; height: 60px; object-fit: cover; border-radius: 4px; opacity: .75; 
+  /* Déchirure légère sur le pied de page */
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
 .footer-names { font-family: var(--ff-script); font-size: 36px; background: var(--grd-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .footer-date  { font-family: var(--ff-sans); font-size: 10.5px; letter-spacing: 3px; color: rgba(201,149,46,.7); text-transform: uppercase; }
 .footer-hashtag { font-family: var(--ff-sans); font-size: 11px; letter-spacing: 2px; color: rgba(201,149,46,.45); }
