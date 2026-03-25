@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heroBg.classList.add('active');        // Ken Burns
         musicBtn.classList.add('visible');
         initScrollObserver();                  // démarrer les animations scroll
-        initTableEdit();
+
       }, 1900);
 
     }, 420);
@@ -110,17 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-el').forEach(el => observer.observe(el));
   }
 
-  /* ─── Numéro de table éditable ───────────── */
-  function initTableEdit() {
-    if (!tableNum) return;
-    const badge = tableNum.closest('.table-badge');
-    if (badge) badge.title = 'Cliquez pour modifier';
-    tableNum.addEventListener('click', () => {
-      const cur = tableNum.textContent.trim() === '__' ? '' : tableNum.textContent.trim();
-      const val = prompt('Numéro de la table :', cur);
-      if (val !== null && val.trim()) tableNum.textContent = val.trim();
-    });
-  }
+  /* ─── (Fonction d'édition de table supprimée par précaution de sécurité) ─── */
 
   /* ─── Parallax léger sur la photo hero ───── */
   if (heroBg) {
