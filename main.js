@@ -96,6 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ─── Gestion du changement d'onglet ─────── */
+  document.addEventListener("visibilitychange", () => {
+    if (!bgAudio) return;
+    if (document.hidden) {
+      bgAudio.pause();
+    } else {
+      // Reprendre seulement si on a déjà ouvert le rideau et que le son n'est pas coupé manuellement
+      if (!isMuted && curtainScreen.classList.contains('hidden')) {
+        bgAudio.play().catch(() => {});
+      }
+    }
+  });
+
   /* ─── Scroll observer — fade in ─────────── */
   function initScrollObserver() {
     const observer = new IntersectionObserver((entries) => {
