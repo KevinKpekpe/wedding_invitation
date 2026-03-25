@@ -274,6 +274,7 @@ body {
   background-attachment: fixed;
   transform-origin: center;
   transition: transform .1s linear;
+  filter: sepia(0.3) saturate(1.1) brightness(0.85); /* Effet doré léger */
 }
 /* Ken Burns slow zoom */
 .hero-bg.active { animation: kbzoom 20s ease-in-out infinite alternate; }
@@ -282,10 +283,10 @@ body {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,3,0,.25) 0%,
-    rgba(10,3,0,.1)  30%,
-    rgba(10,3,0,.55) 65%,
-    rgba(10,3,0,.93) 100%
+    rgba(10,3,0,.35) 0%,
+    rgba(10,3,0,.15)  30%,
+    rgba(139,96,16,.2) 65%, /* Teinte dorée au milieu */
+    rgba(10,3,0,.95) 100%
   );
 }
 .hero-pagne {
@@ -507,6 +508,9 @@ body {
   -webkit-mask-image: radial-gradient(ellipse at 100% 100%, black 28%, transparent 68%);
 }
 .card-photo-wrap { position: relative; z-index: 1; }
+.card-photo-wrap image {
+  filter: sepia(0.2) saturate(1.2) brightness(1.05); /* Effet doré sur la photo de la carte */
+}
 .card-circle-svg { width: 220px; height: 220px; filter: drop-shadow(0 4px 20px rgba(201,149,46,.35)); }
 .card-couple-names {
   display: flex; align-items: center; gap: 8px; z-index: 1;
