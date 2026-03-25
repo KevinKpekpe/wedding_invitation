@@ -107,6 +107,14 @@ body {
   transform-origin: right top;
   box-shadow: inset 12px 0 40px rgba(0,0,0,.55), -6px 0 20px rgba(0,0,0,.4);
 }
+/* Assombrissement global du rideau pour mettre en valeur le texte clair */
+.curtain-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
 /* Plis décoratifs */
 .cPanel-fold {
   position: absolute; top: 0; bottom: 0;
