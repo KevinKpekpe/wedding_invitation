@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       musicBtn.style.opacity = '.55';
     } else {
       bgAudio.play();
-      musicLabel.textContent = '♪ Perfect — Ed Sheeran';
+      musicLabel.textContent = '♪ Chayanne - Bailando Bachata';
       musicBtn.style.opacity = '1';
     }
   });
