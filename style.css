@@ -265,6 +265,23 @@ body {
 @keyframes spin-slow { from{transform:rotate(0);} to{transform:rotate(360deg);} }
 #musicLabel { max-width: 160px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+.pdf-btn {
+  position: fixed; bottom: 24px; left: 24px; z-index: 500;
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(201,149,46,.18);
+  border: 1px solid rgba(201,149,46,.45);
+  backdrop-filter: blur(6px);
+  padding: 8px 12px; border-radius: 40px;
+  cursor: pointer; color: var(--gold-lt);
+  font-family: var(--ff-sans); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  transition: background .3s, transform .2s;
+  opacity: 0; pointer-events: none;
+}
+.pdf-btn.visible { opacity: 1; pointer-events: all; animation: slide-up .5s ease; }
+.pdf-btn:hover { background: rgba(201,149,46,.35); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(201,149,46,.25); }
+.pdf-btn svg { width: 15px; height: 15px; }
+
 /* ═══════════════════════════════════════════════
    MAIN PAGE
 ═══════════════════════════════════════════════ */
@@ -667,8 +684,18 @@ body {
   .hero-bg { background-attachment: scroll; }
 }
 @media print {
-  #curtain-screen, .music-btn { display: none !important; }
-  body { background: white; }
+  @page { margin: 0; size: auto; }
+  #curtain-screen, .music-btn, .pdf-btn { display: none !important; }
+  html, body {
+    width: 100%; height: auto;
+    background: #0e0703 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
   #mainPage { opacity: 1 !important; }
-  .hero-poster { min-height: 50vh; }
+  .hero-poster { min-height: 100vh !important; page-break-after: avoid; }
+  .section-gold-bar { display: block !important; }
+  .section-block, .site-footer { page-break-inside: avoid; }
+  .fade-el { opacity: 1 !important; transform: translateY(0) !important; }
+  .hero-bg { animation: none !important; transform: scale(1) !important; }
 }

@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openBtn       = document.getElementById('openBtn');
   const mainPage      = document.getElementById('mainPage');
   const musicBtn      = document.getElementById('musicBtn');
+  const pdfBtn        = document.getElementById('pdfBtn');
   const musicLabel    = document.getElementById('musicLabel');
   const tableNum      = document.getElementById('tableNumber');
   const heroBg        = document.querySelector('.hero-bg');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainPage.classList.add('visible');
         heroBg.classList.add('active');        // Ken Burns
         musicBtn.classList.add('visible');
+        pdfBtn.classList.add('visible');
         initScrollObserver();                  // démarrer les animations scroll
 
       }, 1900);
@@ -107,6 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
         bgAudio.play().catch(() => {});
       }
     }
+  });
+
+  /* ─── Capture PDF via Impression Native ───── */
+  /* window.print() avec le bon CSS média print est bien supérieur à html2pdf 
+     pour préserver les SVG complexes, clip-path et filtres CSS purs. */
+  pdfBtn.addEventListener('click', () => {
+    window.print();
   });
 
   /* ─── Scroll observer — fade in ─────────── */
