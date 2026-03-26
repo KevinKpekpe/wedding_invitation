@@ -575,7 +575,7 @@ body {
   width: 100%; padding: 0 10px;
 }
 .card-lbl { font-family: var(--ff-serif); font-size: 13px; color: var(--gold-dk); font-style: italic; white-space: nowrap; }
-.card-dots { flex: 1; border-bottom: 1.2px dotted var(--gold); opacity: .8; min-width: 120px; }
+.card-dots { flex: 1; border-bottom: 1.2px dotted var(--gold); opacity: .8; min-width: 120px; color: var(--text-dk); }
 .card-text {
   text-align: center; z-index: 1;
   font-family: var(--ff-serif); font-size: 15px; color: var(--text-dk); line-height: 1.9; font-weight: 300;
@@ -620,7 +620,7 @@ body {
   padding: 8px 0; text-align: center;
   border-bottom: 1px solid rgba(201,149,46,.2);
 }
-.cal-head span { font-family: var(--ff-serif); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: #1a0f04; font-weight: 600; }
+.cal-head span { font-family: var(--ff-serif); font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-lt); font-weight: 600; }
 .cal-names { display: grid; grid-template-columns: repeat(4,1fr); background: rgba(50,0,0,0.25); border-bottom: 1px solid rgba(201,149,46,.1); }
 .cal-names span { text-align: center; padding: 5px 0; font-family: var(--ff-sans); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-lt); font-weight: 700; }
 .cal-days { display: grid; grid-template-columns: repeat(4,1fr); background: transparent; padding: 5px 0; }
